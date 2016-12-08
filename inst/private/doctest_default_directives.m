@@ -8,6 +8,10 @@ function d = doctest_default_directives(varargin)
 
   defaults.normalize_whitespace = true;
   defaults.ellipsis = true;
+  % pseudo-directives: will be detected per target
+  defaults.is_texinfo = [];
+  defaults.is_diary = [];
+
 
   if (nargin == 0)
     d = defaults;
@@ -29,6 +33,10 @@ function d = doctest_default_directives(varargin)
       d.ellipsis = enable;
     case 'NORMALIZE_WHITESPACE'
       d.normalize_whitespace = enable;
+    case 'IS_TEXINFO'
+      d.is_texinfo = enable;
+    case 'IS_DIARY'
+      d.is_diary = enable;
     otherwise
       error('invalid directive "%s"', directive)
   end

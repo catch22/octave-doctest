@@ -44,6 +44,8 @@ for i=1:length(test_matches)
   % set default options
   tests(i).normalize_whitespace = defaults.normalize_whitespace;
   tests(i).ellipsis = defaults.ellipsis;
+  tests(i).is_texinfo = defaults.is_texinfo;
+  tests(i).is_diary = defaults.is_diary;
   tests(i).skip = {};
   tests(i).xfail = {};
 
