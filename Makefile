@@ -61,7 +61,7 @@ help:
 GIT_DATE   := $(shell git show -s --format=\%ci)
 # Follows the recommendations of https://reproducible-builds.org/docs/archives
 define create_tarball
-$(shell cd $(dir $(1)) \
+$(shell set -o pipefail; cd $(dir $(1)) \
     && find $(notdir $(1)) -print0 \
     | LC_ALL=C sort -z \
     | $(TAR) c --mtime="$(GIT_DATE)" \
